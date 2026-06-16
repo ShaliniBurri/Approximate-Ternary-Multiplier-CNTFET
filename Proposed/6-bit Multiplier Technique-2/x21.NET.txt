@@ -1,0 +1,22 @@
+
+.subckt x21 IN_A IN_B OUT_AND
+* nFET
+
+
+XCNT3 N1 IN_A GND GND NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m1  n2=0  tubes=3
+
+XCNT1 OUT_AND IN_B N1 N1 NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m3  n2=0  tubes=3
+
+
+* pFET
+XCNT2 OUT_AND IN_A VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m3  n2=0  tubes=3
+
+XCNT4 OUT_AND IN_B VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m1  n2=0  tubes=3
+
+
+
+.ends
