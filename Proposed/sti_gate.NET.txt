@@ -1,0 +1,24 @@
+.subckt sti_gate IN_STI OUT_STI
+* nFET
+
+XCNT1 wir1 IN_STI GND GND NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m1  n2=0  tubes=3
+
+XCNT3 OUT_STI IN_STI GND GND NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+XCNT5 OUT_STI OUT_STI wir1 wir1 NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m3  n2=0  tubes=3
+
+* pFET
+XCNT6 wir2 IN_STI VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m1  n2=0  tubes=3
+
+XCNT8 OUT_STI IN_STI VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+
+XCNT10 OUT_STI OUT_STI wir2 wir2 PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m3  n2=0  tubes=3
+
+.ends

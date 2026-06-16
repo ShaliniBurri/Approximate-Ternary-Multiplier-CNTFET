@@ -1,0 +1,11 @@
+.inc .\adder.net
+.subckt Fadder IN_A IN_B IN_C OUT_FA
+
+Xadder1 IN_A IN_B w1 adder
+Xadder2 w1 IN_C OUT_FA adder
+
+
+
+
+
+.ends
