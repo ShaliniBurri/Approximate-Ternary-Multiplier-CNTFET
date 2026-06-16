@@ -1,0 +1,6 @@
+.subckt muxfsum a b c sum
+.inc .\muxsum.NET
+
+Xmuxsum1 a b sum1 muxsum
+Xmuxsum2 c sum1 sum muxsum
+.ends

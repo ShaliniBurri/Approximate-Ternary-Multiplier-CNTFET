@@ -1,0 +1,8 @@
+** Accurate full adder carry 
+.inc .\muxcarry.NET
+
+.subckt muxfcarry a b c carry
+Xmuxcarry1 a b carry1 muxcarry
+Xmuxcarry2 c carry1 carry muxcarry
+
+.ends

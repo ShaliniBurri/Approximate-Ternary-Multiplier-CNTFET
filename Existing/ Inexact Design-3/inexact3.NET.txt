@@ -1,0 +1,12 @@
+.subckt inexact3 a b product ca
+.inc .\ntimux.NET
+.inc .\ptimux.NET
+.inc .\Carry.NET
+
+Xntimux1 b GND VDD f1 ntimux
+Xptimux1 a b f1 f2 ptimux
+Xntimux2 a GND f2 product ntimux
+
+XCarry1 a b ca Carry
+
+.ends 
