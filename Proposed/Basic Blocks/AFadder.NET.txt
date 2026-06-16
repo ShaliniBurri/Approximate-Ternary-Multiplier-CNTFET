@@ -1,0 +1,7 @@
+** Approx Full adder
+.inc .\AHadder.net
+.subckt AFadder a b c sum
+XAHadder1 a b sum1 AHadder
+XAHadder2 c sum_1 sum AHadder
+.ends
+ 
