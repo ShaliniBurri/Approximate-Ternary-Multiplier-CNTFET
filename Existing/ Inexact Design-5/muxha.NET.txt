@@ -1,0 +1,22 @@
+**Mux Based Half adder
+
+.subckt muxha a b sum carry
+.inc .\ntimux.NET
+.inc .\ptimux.NET
+.inc .\nti_gate.NET
+.inc .\pti_gate.NET
+
+Xpti_gate1 a apbar pti_gate
+Xnti_gate1 a anbar nti_gate
+Xptimux1 a anbar VDD2 f1 ptimux
+Xntimux1 a VDD2 apbar f2 ntimux
+Xntimux2 b a f2 f3 ntimux
+Xptimux2 b f3 f1 sum ptimux
+
+Xntimux3 a GND VDD2 f4 ntimux
+Xptimux3 a GND VDD2 f5 ptimux
+Xntimux4 b GND f5 f6 ntimux
+Xptimux4 b f6 f4 carry ptimux
+
+
+.ends

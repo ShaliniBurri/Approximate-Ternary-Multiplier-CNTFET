@@ -1,0 +1,10 @@
+** Existing Approximate product
+.subckt kim a b product 
+
+.inc .\ptimux.NET
+.inc .\ntimux.NET
+
+Xntimux1 b GND VDD f1 ntimux
+Xptimux1 a b f1 f2 ptimux
+Xntimux2 a GND f2 product ntimux
+.ends
