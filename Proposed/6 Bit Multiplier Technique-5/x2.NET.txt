@@ -1,0 +1,43 @@
+.inc .\x21.net
+.inc .\x22.net
+.inc .\x23.net
+.inc .\x24.net
+.subckt x2 IN_A IN_B OUT_AND
+* nFET
+X21 IN_A IN_B w1 x21
+X22 IN_A IN_B w2 x22
+X23 IN_A IN_B w3 x23
+X24 IN_A IN_B w4 x24
+
+
+XCNT3 N1 w1 GND GND NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+XCNT1 N2 w2 N1 N1 NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+XCNT5 N3 w3 N2 N2 NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+
+XCNT6 OUT_AND w4 N3 N3 NCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbn='Vfn' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+
+
+
+
+* pFET
+XCNT2 OUT_AND w2 VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+XCNT4 OUT_AND w1 VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+XCNT7 OUT_AND w3 VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+XCNT8 OUT_AND w4 VDD VDD PCNFET Lch=Lg  Lgeff='Lgef' Lss=32e-9  Ldd=32e-9
++ Kgate='Kox' Tox='Hox' Csub='Cb' Vfbp='Vfp' Dout=0  Sout=0  Pitch=20e-9  n1=m2  n2=0  tubes=3
+
+.ends
