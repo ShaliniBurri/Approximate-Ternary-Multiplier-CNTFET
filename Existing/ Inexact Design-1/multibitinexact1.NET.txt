@@ -1,0 +1,101 @@
+.inc .\inexact1.NET
+.inc .\muxsum.NET
+.inc .\muxha.NET
+.inc .\muxfsum.NET
+.inc .\muxfa.NET
+.subckt multibitinexact1 a1 a2 a3 a4 a5 a6 b1 b2 b3 b4 b5 b6 x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12
+
+Xinexact1 a1 b1 x12 inexact1
+Xinexact1 a2 b1 p2  inexact1
+Xinexact1 a3 b1 p3  inexact1
+Xinexact1 a4 b1 p4  inexact1
+Xinexact1 a5 b1 p5  inexact1
+Xinexact1 a6 b1 p6  inexact1
+Xinexact1 a1 b2 p7  inexact1
+Xinexact1 a2 b2 p8  inexact1
+Xinexact1 a3 b2 p9  inexact1
+Xinexact1 a4 b2 p10  inexact1
+Xinexact1 a5 b2 p11  inexact1
+Xinexact1 a6 b2 p12  inexact1
+Xinexact1 a1 b3 p13  inexact1
+Xinexact1 a2 b3 p14  inexact1
+Xinexact1 a3 b3 p15  inexact1
+Xinexact1 a4 b3 p16  inexact1
+Xinexact1 a5 b3 p17  inexact1
+Xinexact1 a6 b3 p18  inexact1
+Xinexact1 a1 b4 p19  inexact1
+Xinexact1 a2 b4 p20  inexact1
+Xinexact1 a3 b4 p21  inexact1
+Xinexact1 a4 b4 p22  inexact1
+Xinexact1 a5 b4 p23  inexact1
+Xinexact1 a6 b4 p24  inexact1
+Xinexact1 a1 b5 p25  inexact1
+Xinexact1 a2 b5 p26  inexact1
+Xinexact1 a3 b5 p27  inexact1
+Xinexact1 a4 b5 p28  inexact1
+Xinexact1 a5 b5 p29  inexact1
+Xinexact1 a6 b5 p30  inexact1
+Xinexact1 a1 b6 p31  inexact1
+Xinexact1 a2 b6 p32  inexact1
+Xinexact1 a3 b6 p33  inexact1
+Xinexact1 a4 b6 p34  inexact1
+Xinexact1 a5 b6 p35  inexact1
+Xinexact1 a6 b6 p36  inexact1
+
+**x2
+Xmuxha1 p2 p7 x11 e1 muxha	
+
+**X3
+Xmuxfa1 p3 p8 p13 f2 e2 muxfa
+Xmuxha2 f2 e1 f3 e3 muxha
+Xmuxsum1 e2 e3 f4 muxsum
+
+**X4 
+Xmuxha3 f4 p19 f5 e5 muxha
+Xmuxfa2 p4 p9 p14 f6 e6 muxfa
+Xmuxha4 f6 f5 x9 e7 muxha
+Xmuxfa3 e6 e5 e7 f8 e8 muxfa
+
+**X5 
+Xmuxfa4 p20 p25 f8 f9 e9 muxfa
+Xmuxfa5 p5 p10 p15 f20 e10 muxfa
+Xmuxha5 f9 f10 x8 e11 muxha
+Xmuxfa6 e10 e9 e11 f12 e12 muxfa
+
+**X6 
+Xmuxha7 e8 f12 f13 e13 muxha
+Xmuxfa7 p21 p26 p31 f14 e14 muxfa
+Xmuxfa8 p6 p11 p16 f15 e15 muxfa
+Xmuxfa9 f13 f14 f15 x7 e16 muxfa
+Xmuxfa10 e15 e14 e13 f17 e17 muxfa
+Xmuxfa11 e17 f17 e16 f18 e18 muxfa
+
+**X7 
+Xmuxfa12 e12 p32 p27 f19 e19 muxfa
+Xmuxfa13 p12 p17 p22 f20 e20 muxfa
+Xmuxfa14 f18 f19 f20 x6 e21 muxfa
+Xmuxfa15 e20 e19 e21 f22 e22 muxfa
+
+**X8
+Xmuxfa16 f22 e18 p33 f23 e23 muxfa
+Xmuxfa17 p18 p23 p28 f24 e24 muxfa
+Xmuxha8 f24 f23 x5 e25 muxha
+Xmuxfa18 e24 e23 e25 f26 e26 muxfa
+
+**X9 
+Xmuxfa19 p24 p29 p34 f27 e27 muxfa
+Xmuxha9  e22 f26 f28 e28 muxha
+Xmuxha10 f28 f27 f29 x4 muxha
+Xmuxfa21 e27 e28 e29 f30 e30 muxfa
+
+**X10 
+Xmuxfa22 p30 p35 e26 f31 e31 muxfa
+Xmuxha11 f14 f31 x3 muxha
+Xmuxsum2 e32 e31 e33 muxsum
+
+**X11 and X12
+Xmuxfa e33 e14 p36 x2 x1 muxfa
+
+.ends
+
+
