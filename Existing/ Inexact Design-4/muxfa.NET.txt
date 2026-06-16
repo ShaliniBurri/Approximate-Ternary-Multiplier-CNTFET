@@ -1,0 +1,7 @@
+** Accurate Mux based Full Adder
+.inc .\muxfsum.NET
+.inc .\muxfcarry.NET
+.subckt muxfa a b c sum carry
+Xmuxfsum1 a b c sum muxfsum
+Xmuxfcarry1 a b c carry muxfcarry
+.ends

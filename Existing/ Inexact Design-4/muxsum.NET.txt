@@ -1,0 +1,14 @@
+**Mux based accurate Sum 
+
+.subckt muxsum a b sum 
+.inc .\ntimux.NET
+.inc .\ptimux.NET
+.inc .\nti_gate.NET
+.inc .\pti_gate.NET
+Xpti_gate1 a apbar pti_gate
+Xnti_gate1 a anbar nti_gate
+Xptimux1 a anbar VDD2 f1 ptimux
+Xntimux1 a VDD2 apbar f2 ntimux
+Xntimux2 b a f2 f3 ntimux
+Xptimux2 b f3 f1 sum ptimux
+.ends

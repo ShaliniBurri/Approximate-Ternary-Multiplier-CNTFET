@@ -1,0 +1,168 @@
+**Inexact4 6-bit
+
+.inc .\inexact4.NET
+.inc .\muxsum.NET
+.inc .\muxha.NET
+.inc .\muxfsum.NET
+.inc .\muxfa.NET
+.subckt 6bit_inexact4 a1 a2 a3 a4 a5 a6 b1 b2 b3 b4 b5 b6 x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12
+
+
+
+Xinexact4 a1 b1 x12 c1 inexact4
+Xinexact4 a2 b1 p2 c2 inexact4
+Xinexact4 a3 b1 p3 c3 inexact4
+Xinexact4 a4 b1 p4 c4 inexact4
+Xinexact4 a5 b1 p5 c5 inexact4
+Xinexact4 a6 b1 p6 c6 inexact4
+Xinexact4 a1 b2 p7 c7 inexact4
+Xinexact4 a2 b2 p8 c8 inexact4
+Xinexact4 a3 b2 p9 c9 inexact4
+Xinexact4 a4 b2 p10 c10 inexact4
+Xinexact4 a5 b2 p11 c11 inexact4
+Xinexact4 a6 b2 p12 c12 inexact4
+Xinexact4 a1 b3 p13 c13 inexact4
+Xinexact4 a2 b3 p14 c14 inexact4
+Xinexact4 a3 b3 p15 c15 inexact4
+Xinexact4 a4 b3 p16 c16 inexact4
+Xinexact4 a5 b3 p17 c17 inexact4
+Xinexact4 a6 b3 p18 c18 inexact4
+Xinexact4 a1 b4 p19 c19 inexact4
+Xinexact4 a2 b4 p20 c20 inexact4
+Xinexact4 a3 b4 p21 c21 inexact4
+Xinexact4 a4 b4 p22 c22 inexact4
+Xinexact4 a5 b4 p23 c23 inexact4
+Xinexact4 a6 b4 p24 c24 inexact4
+Xinexact4 a1 b5 p25 c25 inexact4
+Xinexact4 a2 b5 p26 c26 inexact4
+Xinexact4 a3 b5 p27 c27 inexact4
+Xinexact4 a4 b5 p28 c28 inexact4
+Xinexact4 a5 b5 p29 c29 inexact4
+Xinexact4 a6 b5 p30 c30 inexact4
+Xinexact4 a1 b6 p31 c31 inexact4
+Xinexact4 a2 b6 p32 c32 inexact4
+Xinexact4 a3 b6 p33 c33 inexact4
+Xinexact4 a4 b6 p34 c34 inexact4
+Xinexact4 a5 b6 p35 c35 inexact4
+Xinexact4 a6 b6 p36 c36 inexact4
+
+**X1
+Xmuxfa1 p2 c1 p7 x11 e1 Xmuxfa
+
+**X2
+Xmuxha2 c2 c7 f2 e2 muxha
+
+Xmuxfa2 p3 p8 p13 f3 e3 muxfa
+Xmuxfa3 f3 f2 e1 x10 e4 muxfa
+Xmuxfsum1 e4 e2 e3 g1 muxfsum
+
+**X3
+Xmuxfa4 c3 c8 c13 f5 e5 muxfa
+Xmuxha3 p14 p19 f6 e6 muxha
+Xmuxha4 p4 p9 f7 e7 muxha
+Xmuxha5 f7 f6 g3 g2 muxha
+Xmuxfa6 f5 g3 g1 x9 e8 muxfa
+Xmuxfa7 g2 e6 e7 f9 e9 muxfa
+Xmuxfa8 e5 f9 e8 f10 g4 muxfa
+Xmuxsum5 g4 e9 e10 muxsum
+
+**X4 
+Xmuxfa9 c4 c9 c14 f11 e11 muxfa
+Xmuxfa10 p5 p10 p15 f12 e12 muxfa
+Xmuxha6 p20 p25 f13 e13 muxha
+Xmuxha7 c19 f11 f14 e14 muxha
+Xmuxha8 f12 f13 f15 e15 muxha
+Xmuxfa11 e13 e12 f16 e16 muxfa
+Xmuxha9 e11 e14 f17 e17 muxha
+Xmuxfa12 f10 f14 f15 x8 e19 muxfa
+Xmuxfa13 f16 f17 e10 f20 e20 muxfa
+Xmuxha10 e19 f20 f21 e21 muxha
+Xmuxfsum14 e21 e20 e16 f18 muxfsum
+Xmuxsum11 f18 e17 f22 muxsum
+
+**X5
+Xmuxha12 c20 c25 f23 e23 muxha
+Xmuxfa15 c5 c10 c15 f24 e24 muxfa
+Xmuxfa16 p21 p26 p31 f25 e25 muxfa
+Xmuxfa17 p6 p11 p16 f26 e26 muxfa
+Xmuxha13 f23 f24 f27 e27 muxha
+Xmuxfa18 e23 e24 e27 f28 e28 muxfa
+Xmuxha14 f26 f25 f29 e29 muxha
+Xmuxfa19 e29 e25 e26 f30 e30 muxfa
+Xmuxfa20 f21 f27 f29 x7 e31 muxfa
+Xmuxfa21 f30 f28 f22 f32 e32 muxfa
+Xmuxha15 e31 f32 f34 e34 muxha
+Xmuxfsum22 e30 e32 e34 f33 muxfsum
+Xmuxsum16 e28 f33 f35 muxsum
+
+**X6
+
+Xmuxfa22 c21 c26 c31 f36 e36 muxfa
+Xmuxfa23 c6 c11 c16 f37 e37 muxfa
+Xmuxfa24 p22 p17 p12 f38 e38 muxfa
+Xmuxha17 p27 p32 f39 e39 muxha
+Xmuxha18 f36 f37 f40 e40 muxha
+Xmuxfa25 e40 e36 e37 f41 e41 muxfa
+Xmuxha19 f38 f39 f42 e42 muxha
+Xmuxfa26 e42 e38 e39 f43 e43 muxfa
+Xmuxfa27 f34 f40 f42 x6 e44 muxfa
+Xmuxfa28 f43 f41 f35 f45 e45 muxfa
+Xmuxha20 e44 f45 f47 e47 muxha
+Xmuxfsum29 e47 e45 e43 f46 muxfsum
+Xmuxsum21 f46 e41 f48 muxsum
+
+**X7
+Xmuxha22 c27 c32 f49 e49 muxha
+Xmuxfa30 c12 c17 c22 f50 e50 muxfa
+Xmuxfa31 p18 p23 p28 f51 e52 muxfa
+Xmuxha23 f50 f49 f52 e52 muxha
+Xmuxfa32 e52 e49 e50 f53 e53 muxfa
+Xmuxha24 p33 f51 f54 e54 muxha
+Xmuxfa33 f47 f52 f54 x5 e55 muxfa
+Xmuxha25 e54 e51 f57 e57 muxha
+Xmuxfa34 f57 f53 f48 f56 e56 muxfa
+Xmuxha26 e55 f56 f58 e58 muxha
+Xmuxfsum35 e57 e56 e58 f59 muxfsum
+Xmuxsum27 e53 f59 e60 muxsum
+
+**X8
+XFmuxfa36 c18 c23 c28 f61 e61 muxfa
+XFmuxfa37 p24 p29 p34 f62 e62 muxfa
+Xmuxha28 f61 c33 f63 e63 muxha
+Xmuxha29 e63 e61 f64 e64 muxha
+Xmuxfar38 f58 f63 f62 x4 e65 muxfa
+Xmuxfar39 e62 f64 e60 f66 e66 muxfa
+Xmuxha30 f66 e65 f68 e68 muxha
+Xmuxsum31 e68 e66 e64 f69 muxfsum
+
+**X9
+Xmuxfa41 c24 c29 c34 f70 e70 muxfa
+Xmuxha31 p30 p35 f71 e71 muxha
+Xmuxfar42 f68 f70 f71 x3 e72 muxfa
+Xmuxfar43 e70 e71 e72 f73 e73 muxfa
+Xmuxfar44 f73 e73 f68 f74 e74 muxfa
+
+**X10
+Xmuxfa45 p36 c30 c35 f75 e75 muxfa
+Xmuxha32 f74 f75 x2 e76 muxha
+Xmuxfa46 e76 e75 e74 f77 e77 muxfa
+Xmuxfsum47 e77 f77 c36 x1 muxfsum
+
+.ends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
