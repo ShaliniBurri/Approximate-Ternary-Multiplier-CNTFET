@@ -1,8 +1,0 @@
-.inc .\x1stblock.net
-.inc .\x2ndblock.net
-.inc .\encoder3.net
-.subckt AHadder a b sum
-Xx1stblock1 a b x1 x1stblock
-Xx2ndblock1 a b x2 x2ndblock
-Xencoder3 x1 x2 sum encoder3
-.ends

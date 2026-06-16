@@ -1,6 +1,0 @@
-.inc .\sti_gate.net
-.inc .\nand_gate.net
-.subckt andgate a b c
-Xnand_gate1 a b w1 nand_gate
-Xsti_gate1 w1 c sti_gate
-.ends

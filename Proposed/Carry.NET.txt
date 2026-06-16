@@ -1,9 +1,0 @@
-** Carry
-*.inc .\ptimux.NET
-
-.subckt Carry a b f c
-
-Xptimux1 a Gnd VDD2 f ptimux
-Xptimux2 b Gnd f c ptimux
-
-.ends
